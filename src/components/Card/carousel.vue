@@ -27,7 +27,7 @@ export default {};
 
 <style lang="less" scope>
 .carsousel {
-  width: 68.75%;
+  width: 100%;
   height: 300px;
 }
 .carousel-img {

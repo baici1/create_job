@@ -15,6 +15,11 @@ import {
   NInput,
   NIcon,
   NCarousel,
+  NGrid,
+  NGi,
+  NCalendar,
+  NEllipsis,
+  NSkeleton,
 } from "naive-ui";
 
 const naive = create({
@@ -34,6 +39,11 @@ const naive = create({
     NInput,
     NIcon,
     NCarousel,
+    NGrid,
+    NGi,
+    NCalendar,
+    NEllipsis,
+    NSkeleton,
   ],
 });
 

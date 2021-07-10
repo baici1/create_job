@@ -1,16 +1,17 @@
 import Mock from "mockjs";
+// const Random = Mock.Random;
 let match = {
   id: "@id()",
   name: "@ctitle(3, 5)",
 };
 let matchs = [];
-for (let i = 1; i <= 7; i++) {
+for (let i = 1; i <= 6; i++) {
   matchs.push(match);
 }
 
 let competiondate = {
-  time: "@datetime()",
-  name: "@cword(6)",
+  time: "@date('MM-dd')",
+  name: "@cparagraph(1,3)",
 };
 let competionsdate = [];
 for (let i = 1; i <= 7; i++) {
@@ -18,9 +19,9 @@ for (let i = 1; i <= 7; i++) {
 }
 
 let team = {
-  num: " @number|1-100",
-  time: "@datetime()",
-  name: "@cword(6)",
+  "num|1-10": 10,
+  time: "@date('MM-dd')",
+  name: "@cword(3,5)",
 };
 let teams = [];
 for (let i = 1; i <= 7; i++) {
