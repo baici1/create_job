@@ -10,6 +10,7 @@ for (let i = 1; i <= 6; i++) {
 }
 
 let competiondate = {
+  id: "@id()",
   time: "@date('MM-dd')",
   name: "@cparagraph(1,3)",
 };
@@ -19,12 +20,14 @@ for (let i = 1; i <= 7; i++) {
 }
 
 let team = {
+  id: "@id()",
   "num|1-10": 10,
   time: "@date('MM-dd')",
   name: "@cword(3,5)",
+  describe: "@cparagraph(1,3)",
 };
 let teams = [];
-for (let i = 1; i <= 7; i++) {
+for (let i = 1; i <= 8; i++) {
   teams.push(team);
 }
 

@@ -36,27 +36,40 @@
                 <Competition></Competition>
               </n-grid-item>
               <n-grid-item>
-                <team></team>
+                <Competition></Competition>
               </n-grid-item>
             </n-grid>
           </n-grid-item>
           <n-grid-item :span="1">
-            <Competition></Competition>
+            <entrance></entrance>
           </n-grid-item>
         </n-grid>
-        <!-- <div class="container">
-          <div class="container-one">
-            <carousel style="width: 67.5%"></carousel>
-            <Competition style="width: 22.5%"></Competition>
-          </div>
-          <div class="container-one" style="margin-top: 30px">
-            <Competition></Competition>
-            <Competition></Competition>
-            <Competition style="width: 22.5%"></Competition>
-          </div>
-        </div> -->
+
+        <n-grid
+          cols="1 600:4"
+          class="container"
+          style="width: 75%"
+          :x-gap="12"
+          :y-gap="8"
+        >
+          <n-grid-item
+            :span="1"
+            v-for="(item, index) of state.team"
+            :key="index"
+          >
+            <Thing
+              :num="item.num"
+              :name="item.name"
+              :describe="item.describe"
+            ></Thing>
+          </n-grid-item>
+        </n-grid>
       </n-layout-content>
-      <n-layout-footer>成府路</n-layout-footer>
+      <n-layout-footer>
+        <div class="container" style="width: 75%">
+          <Footer style="style: 'width: 75%'"></Footer>
+        </div>
+      </n-layout-footer>
     </n-layout>
   </div>
 </template>
@@ -64,28 +77,42 @@
 <script>
 import naviga from "@/components/Naviga";
 import carousel from "@/components/Card/carousel";
-import Competition from "../components/Card/competition.vue";
-import team from "../components/Card/team.vue";
+import Competition from "@/components/Card/competition.vue";
+import entrance from "@/components/Card/entrance.vue";
+import Thing from "@/components/Card/thing.vue";
+import Footer from "@/components/footer";
+import { team } from "@/api/home";
+import { onMounted, reactive } from "vue";
 export default {
   name: "Home",
   components: {
     naviga,
     carousel,
     Competition,
-    team,
+    entrance,
+    Thing,
+    Footer,
   },
-  setup() {},
+  setup() {
+    let state = reactive({
+      team: [],
+    });
+    const res = async () => {
+      const { data } = await team();
+      state.team = data;
+    };
+
+    onMounted(() => {
+      res();
+    });
+    return { state, res };
+  },
 };
 </script>
 <style lang="less" scope>
 .container {
   margin: 0 auto;
-  // .container-one {
-  //   display: flex;
-  //   justify-content: space-between;
-  //   align-items: center;
-  //   flex-wrap: wrap;
-  // }
+  margin-top: 20px;
 }
 
 .layout-content {

@@ -56,19 +56,13 @@ img {
     width: 48px;
     padding: 0 15px;
     text-align: center;
-    .router-link-active {
-      text-decoration: none;
-      color: black;
-    }
-    a {
-      text-decoration: none;
-    }
-    a:hover {
-      color: rgb(51, 112, 255);
-    }
   }
-  .top-box:hover {
-    color: rgb(51, 112, 255);
-  }
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: rgb(51, 112, 255);
 }
 </style>

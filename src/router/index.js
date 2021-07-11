@@ -12,6 +12,11 @@ const routes = [
     name: "Team",
     component: Team,
   },
+  {
+    path: "/home/:id",
+    name: "information",
+    component: Home,
+  },
 ];
 
 const router = createRouter({

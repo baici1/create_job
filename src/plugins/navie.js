@@ -20,6 +20,7 @@ import {
   NCalendar,
   NEllipsis,
   NSkeleton,
+  NThing,
 } from "naive-ui";
 
 const naive = create({
@@ -44,6 +45,7 @@ const naive = create({
     NCalendar,
     NEllipsis,
     NSkeleton,
+    NThing,
   ],
 });
 

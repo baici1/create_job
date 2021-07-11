@@ -6,9 +6,11 @@
         <n-icon>
           <ChevronForward></ChevronForward>
         </n-icon>
-        <n-ellipsis style="max-width: 230px">
-          {{ item.name }}
-        </n-ellipsis>
+        <router-link :to="{ name: 'information', params: { id: item.id } }">
+          <n-ellipsis style="max-width: 230px">
+            {{ item.name }}
+          </n-ellipsis>
+        </router-link>
       </div>
       <div class="com_text_right">
         {{ item.time }}
