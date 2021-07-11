@@ -72,4 +72,8 @@ export default {
     border-bottom: 1px solid black;
   }
 }
+.n-card > .n-card__content,
+.n-card > .n-card__footer {
+  padding: 0;
+}
 </style>
