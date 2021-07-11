@@ -1,5 +1,5 @@
 <template>
-  <n-card title="最近比赛信息" hoverable class="com">
+  <n-card title="最近比赛信息" hoverable class="com" content-style="padding:0">
     <div class="com_text" v-for="(item, index) of state.date" :key="index">
       <!-- <n-skeleton text width="100%" v-if="state.loading" class="com_ske" /> -->
       <div class="com_text_left">
@@ -71,9 +71,5 @@ export default {
   .n-card-header__main {
     border-bottom: 1px solid black;
   }
-}
-.n-card > .n-card__content,
-.n-card > .n-card__footer {
-  padding: 0;
 }
 </style>
