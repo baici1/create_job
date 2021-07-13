@@ -118,12 +118,10 @@ export default {
   width: 75%;
   margin: 15px auto;
   .t_avatar {
-    width: 9rem;
-    height: 6rem;
+    padding: 20px;
     background-color: rgb(38, 93, 180);
     text-align: center;
     color: white;
-    line-height: 6rem;
     font-size: 1.5rem;
   }
 }

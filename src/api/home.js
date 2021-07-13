@@ -28,3 +28,10 @@ export function detail(data) {
     data: data,
   });
 }
+
+export function stu() {
+  return request({
+    url: "/stu",
+    method: "get",
+  });
+}

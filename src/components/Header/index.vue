@@ -5,7 +5,7 @@
     </div>
     <div class="top-right">
       <div class="top-box">
-        <router-link :to="'/home'" class="router">首页</router-link>
+        <router-link :to="'/'" class="router">首页</router-link>
       </div>
       <div class="top-box">
         <router-link :to="'/team'" class="router">组队</router-link>

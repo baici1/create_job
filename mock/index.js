@@ -1,5 +1,5 @@
 import Mock from "mockjs";
-// const Random = Mock.Random;
+const Random = Mock.Random;
 let match = {
   "id|1-10": 10,
   name: "@ctitle(3, 5)",
@@ -43,3 +43,14 @@ for (let i = 1; i <= 8; i++) {
   teams.push(team);
 }
 Mock.mock("/api/team", "get", teams);
+
+let stus = [];
+let stu = {
+  image: Random.image("200x100", "#894FC4", "#FFF", "png", "!"),
+  name: "@cname()",
+};
+
+for (let i = 1; i <= 8; i++) {
+  stus.push(stu);
+}
+Mock.mock("/api/stu", "get", stus);

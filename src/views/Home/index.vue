@@ -19,18 +19,15 @@
             >
               {{ year }}-{{ month }}-{{ date }}
             </n-calendar> -->
-            <Competition></Competition>
+            <Notice></Notice>
           </n-grid-item>
           <n-grid-item :span="3">
             <n-grid cols="1 800:3" :x-gap="20">
-              <n-grid-item>
+              <n-grid-item :span="2">
                 <Competition></Competition>
               </n-grid-item>
               <n-grid-item>
-                <Competition></Competition>
-              </n-grid-item>
-              <n-grid-item>
-                <Competition></Competition>
+                <Person></Person>
               </n-grid-item>
             </n-grid>
           </n-grid-item>
@@ -68,6 +65,8 @@ import carousel from "./components/carousel.vue";
 import Competition from "./components/competition.vue";
 import entrance from "./components/entrance.vue";
 import Thing from "./components/thing.vue";
+import Person from "./components/person.vue";
+import Notice from "./components/notice_h.vue";
 import { team } from "@/api/home";
 import { onMounted, reactive } from "vue";
 export default {
@@ -77,6 +76,8 @@ export default {
     Competition,
     entrance,
     Thing,
+    Person,
+    Notice,
   },
   setup() {
     let state = reactive({

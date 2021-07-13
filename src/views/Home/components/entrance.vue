@@ -1,6 +1,12 @@
 <template>
   <div class="entrance">
-    <n-card title="系统入口">
+    <n-card
+      title="系统入口"
+      content-style="display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-content: center;"
+    >
       <n-button>
         <n-icon>
           <Accessibility />
@@ -36,15 +42,9 @@ export default {
 <style lang="less" scope>
 .entrance {
   width: 100%;
-  .n-card__content {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-content: center;
-    .n-button {
-      margin-bottom: 20px;
-      background-color: rgb(237, 237, 237);
-    }
+  .n-button {
+    margin-bottom: 20px;
+    background-color: rgb(237, 237, 237);
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <n-card title="联系我们" class="card">
+    <n-card title="联系我们" class="card" style="width: 75%">
       <p>如果页面出现bug请联系我们解决！！谢谢</p>
       <p>
         <n-icon>

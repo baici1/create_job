@@ -1,5 +1,19 @@
 <template>
-  <n-card title="最近比赛信息" hoverable class="com" content-style="padding:0">
+  <n-card
+    title="最近比赛信息"
+    hoverable
+    class="com"
+    content-style="display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;"
+    :segmented="{
+      content: 'hard',
+      footer: 'soft',
+    }"
+  >
     <div class="com_text" v-for="(item, index) of state.date" :key="index">
       <!-- <n-skeleton text width="100%" v-if="state.loading" class="com_ske" /> -->
       <div class="com_text_left">
@@ -60,17 +74,6 @@ export default {
       padding-right: 10px;
     }
     // border-bottom: 1px solid black;
-  }
-  .n-card__content {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 0;
-  }
-  .n-card-header__main {
-    border-bottom: 1px solid black;
   }
 }
 </style>
