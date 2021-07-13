@@ -2,7 +2,11 @@
   <div class="navigation">
     <n-grid cols="2 600:6" style="text-align: center">
       <n-grid-item v-for="(item, index) of state.team" :key="index">
-        <div class="smallbox border-r">{{ item.name }}</div>
+        <div class="smallbox border-r">
+          <router-link :to="{ name: 'match', params: { id: item.id } }"
+            >{{ item.name }}
+          </router-link>
+        </div>
       </n-grid-item>
     </n-grid>
     <!-- <div class="contianer border-l">
@@ -63,6 +67,9 @@ export default {
   }
   .border-r {
     border-right: 2px solid white;
+    a {
+      color: black;
+    }
   }
 }
 </style>

@@ -8,12 +8,12 @@
         </n-icon>
         <router-link :to="{ name: 'information', params: { id: item.id } }">
           <n-ellipsis style="max-width: 230px">
-            {{ item.name }}
+            {{ item.title }}
           </n-ellipsis>
         </router-link>
       </div>
       <div class="com_text_right">
-        {{ item.time }}
+        {{ relativeTime(item.time, "MM-DD") }}
       </div>
     </div>
   </n-card>
@@ -23,6 +23,7 @@
 import { com_time } from "@/api/home";
 import { onMounted, reactive } from "vue";
 import { ChevronForward } from "@vicons/ionicons5";
+import { relativeTime } from "@/utils/dayjs";
 export default {
   name: "competition",
   components: {
@@ -39,7 +40,7 @@ export default {
     onMounted(() => {
       res();
     });
-    return { state, res };
+    return { state, res, relativeTime };
   },
 };
 </script>

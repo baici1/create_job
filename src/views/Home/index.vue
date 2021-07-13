@@ -1,12 +1,6 @@
 <template>
   <div class="home">
     <n-layout>
-      <n-layout-header>
-        <div>
-          <naviga></naviga>
-        </div>
-      </n-layout-header>
-
       <n-layout-content class="layout-content">
         <n-grid
           cols="1 600:4"
@@ -65,33 +59,24 @@
           </n-grid-item>
         </n-grid>
       </n-layout-content>
-      <n-layout-footer>
-        <div class="container" style="width: 75%">
-          <Footer style="style: 'width: 75%'"></Footer>
-        </div>
-      </n-layout-footer>
     </n-layout>
   </div>
 </template>
 
 <script>
-import naviga from "@/components/Naviga";
-import carousel from "@/components/Card/carousel";
-import Competition from "@/components/Card/competition.vue";
-import entrance from "@/components/Card/entrance.vue";
-import Thing from "@/components/Card/thing.vue";
-import Footer from "@/components/footer";
+import carousel from "./components/carousel.vue";
+import Competition from "./components/competition.vue";
+import entrance from "./components/entrance.vue";
+import Thing from "./components/thing.vue";
 import { team } from "@/api/home";
 import { onMounted, reactive } from "vue";
 export default {
   name: "Home",
   components: {
-    naviga,
     carousel,
     Competition,
     entrance,
     Thing,
-    Footer,
   },
   setup() {
     let state = reactive({
@@ -112,10 +97,10 @@ export default {
 <style lang="less" scope>
 .container {
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .layout-content {
-  margin: 40px auto;
+  margin: 20px auto;
 }
 </style>

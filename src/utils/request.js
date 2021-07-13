@@ -1,5 +1,5 @@
 import axios from "axios";
-import router from "vue-router";
+import { useRouter } from "vue-router";
 let service = axios.create({
   baseURL: "/api", //process.env.VUE_APP_BASE_API
   timeout: 5000,
@@ -23,7 +23,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   (response) => {
     if (response.data.status == 100) {
-      router.push("/");
+      useRouter.push("/");
     }
     return response;
   },

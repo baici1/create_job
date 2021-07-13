@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <n-card title="联系我们">
+    <n-card title="联系我们" class="card">
       <p>如果页面出现bug请联系我们解决！！谢谢</p>
       <p>
         <n-icon>
@@ -23,4 +23,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.footer {
+  margin-top: 20px;
+  background-color: rgba(232, 233, 232, 0.3);
+}
+.card {
+  width: 75%;
+  margin: 0 auto;
+}
+</style>

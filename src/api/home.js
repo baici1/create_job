@@ -3,20 +3,28 @@ import request from "@/utils/request";
 export function getdata() {
   return request({
     url: "/match",
-    methods: "get",
+    method: "get",
   });
 }
 
 export function com_time() {
   return request({
     url: "/date",
-    methods: "get",
+    method: "get",
   });
 }
 
 export function team() {
   return request({
     url: "/team",
-    methods: "get",
+    method: "get",
+  });
+}
+
+export function detail(data) {
+  return request({
+    url: "/detail",
+    method: "POST",
+    data: data,
   });
 }

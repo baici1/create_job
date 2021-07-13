@@ -21,6 +21,9 @@ import {
   NEllipsis,
   NSkeleton,
   NThing,
+  NEmpty,
+  NCollapseItem,
+  NCollapse,
 } from "naive-ui";
 
 const naive = create({
@@ -46,6 +49,9 @@ const naive = create({
     NEllipsis,
     NSkeleton,
     NThing,
+    NEmpty,
+    NCollapseItem,
+    NCollapse,
   ],
 });
 
