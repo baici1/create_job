@@ -13,7 +13,7 @@ const routes = [
   {
     path: "/home/:id",
     name: "information",
-    component: () => import("@/views/Home"),
+    component: () => import("@/views/Game_data"),
   },
   {
     path: "/match/:id",
