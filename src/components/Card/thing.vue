@@ -11,19 +11,38 @@
         </template>
         <template #header> {{ name || "无名" }}</template>
         <template #header-extra>
-          <n-button circle size="small">
-            <template #icon>
-              <EllipsisHorizontalCircleOutline />
-            </template>
-          </n-button>
+          <router-link :to="{ name: 'Detail', params: { id: ID } }">
+            <n-button circle size="small">
+              <template #icon>
+                <EllipsisHorizontalCircleOutline />
+              </template>
+            </n-button>
+          </router-link>
         </template>
         <template #description> 需要人数：{{ num || 0 }}</template>
         {{
           describe ||
           "队伍有llz是专业第一，队伍有llz是专业第一，队伍有llz是专业第一，队伍有llz是专业第一"
         }}
-        <template #footer> 操作 </template>
+        <template #footer v-if="Ispartner">
+          人员名单：
+          <n-space>
+            <n-button
+              size="small"
+              v-for="(item, index) of partner"
+              :key="index"
+            >
+              <template #icon>
+                <n-icon>
+                  <PersonAdd />
+                </n-icon>
+              </template>
+              {{ item || "李灵智" }}
+            </n-button>
+          </n-space>
+        </template>
         <template #action>
+          联系方式:
           <n-space>
             <n-button size="small">
               <template #icon>
@@ -55,6 +74,7 @@ import {
   PaperPlane,
   EllipsisHorizontalCircleOutline,
 } from "@vicons/ionicons5";
+import { computed } from "@vue/runtime-core";
 export default {
   name: "thing",
   props: {
@@ -62,12 +82,19 @@ export default {
     num: Number,
     name: String,
     describe: String,
+    partner: Array,
+    Ispartner: Boolean,
   },
   components: {
     PersonAdd,
     People,
     PaperPlane,
     EllipsisHorizontalCircleOutline,
+  },
+  setup(props) {
+    return {
+      ID: computed(() => parseInt(props.id)),
+    };
   },
 };
 </script>

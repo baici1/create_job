@@ -12,7 +12,7 @@
         <template #header>
           <h2 style="margin: 0">“互联网+”大学生创新创业大赛</h2>
         </template>
-        <template #header-extra v-if="headerExtra">
+        <template #header-extra>
           <n-button circle size="small"> </n-button>
         </template>
         <template #description></template>
@@ -22,34 +22,7 @@
             公告：请同学们于7/8号前完成报名组队
           </div></template
         >
-        <template #action>
-          <!-- <n-space>
-            <n-button size="small">
-              <template #icon>
-                <n-icon>
-                  <cash-icon />
-                </n-icon>
-              </template>
-              1 块钱
-            </n-button>
-            <n-button size="small">
-              <template #icon>
-                <n-icon>
-                  <cash-icon />
-                </n-icon>
-              </template>
-              10 块钱
-            </n-button>
-            <n-button size="small">
-              <template #icon>
-                <n-icon>
-                  <cash-icon />
-                </n-icon>
-              </template>
-              100 块钱
-            </n-button>
-          </n-space> -->
-        </template>
+        <template #action> </template>
       </n-thing>
     </n-card>
   </div>

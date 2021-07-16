@@ -5,11 +5,7 @@ const routes = [
     name: "Home",
     component: () => import("@/views/Home"),
   },
-  {
-    path: "/team",
-    name: "Team",
-    component: () => import("@/views/Team.vue"),
-  },
+
   {
     path: "/home/:id",
     name: "information",
@@ -19,6 +15,16 @@ const routes = [
     path: "/match/:id",
     name: "match",
     component: () => import("@/views/Match"),
+  },
+  {
+    path: "/team",
+    name: "Team",
+    component: () => import("@/views/Team"),
+  },
+  {
+    path: "/team/:id",
+    name: "Detail",
+    component: () => import("@/views/Team_Detail"),
   },
 ];
 

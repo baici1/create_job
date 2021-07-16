@@ -49,9 +49,11 @@
             :key="index"
           >
             <Thing
+              :id="item.id"
               :num="item.num"
               :name="item.name"
               :describe="item.describe"
+              :Ispartner="false"
             ></Thing>
           </n-grid-item>
         </n-grid>
@@ -64,7 +66,7 @@
 import carousel from "./components/carousel.vue";
 import Competition from "./components/competition.vue";
 import entrance from "./components/entrance.vue";
-import Thing from "./components/thing.vue";
+import Thing from "@/components/Card/thing.vue";
 import Person from "./components/person.vue";
 import Notice from "./components/notice_h.vue";
 import { team } from "@/api/home";

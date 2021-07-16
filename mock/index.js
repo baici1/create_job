@@ -30,12 +30,13 @@ function matchDetail() {
 Mock.mock("/api/detail", "post", matchDetail);
 
 let team = {
-  id: "@id()",
+  id: "@increment()",
   "num|1-10": 10,
   time: "@date('MM-dd')",
   name: "@cword(3,5)",
   describe: "@cparagraph(1,3)",
-  award: ["@cword(3,5)", "@cword(3,5)", "@cword(3,5)"],
+  award: ["@cword(2,3)", "@cword(2,3)", "@cword(2,3)"],
+  partner: ["@cword(2,3)", "@cword(2,3)", "@cword(2,3)"],
 };
 let teams = [];
 
@@ -54,3 +55,16 @@ for (let i = 1; i <= 8; i++) {
   stus.push(stu);
 }
 Mock.mock("/api/stu", "get", stus);
+
+let match_team = {
+  id: "@increment()",
+  name: "@cword(3,5)",
+  team: teams,
+};
+
+let match_teams = [];
+
+for (let i = 1; i <= 8; i++) {
+  match_teams.push(match_team);
+}
+Mock.mock("/api/match_team", "get", match_teams);

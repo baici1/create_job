@@ -24,6 +24,8 @@ import {
   NEmpty,
   NCollapseItem,
   NCollapse,
+  NLayoutSider,
+  NMenu,
 } from "naive-ui";
 
 const naive = create({
@@ -52,6 +54,8 @@ const naive = create({
     NEmpty,
     NCollapseItem,
     NCollapse,
+    NLayoutSider,
+    NMenu,
   ],
 });
 

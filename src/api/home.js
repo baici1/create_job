@@ -35,3 +35,9 @@ export function stu() {
     method: "get",
   });
 }
+export function matchdata() {
+  return request({
+    url: "/match_team",
+    method: "get",
+  });
+}
