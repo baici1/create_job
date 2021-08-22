@@ -26,6 +26,12 @@ import {
   NCollapse,
   NLayoutSider,
   NMenu,
+  NDrawer,
+  NDrawerContent,
+  NH1,
+  NH2,
+  NH3,
+  NP,
 } from "naive-ui";
 
 const naive = create({
@@ -56,6 +62,12 @@ const naive = create({
     NCollapse,
     NLayoutSider,
     NMenu,
+    NDrawer,
+    NDrawerContent,
+    NH1,
+    NH2,
+    NH3,
+    NP,
   ],
 });
 

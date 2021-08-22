@@ -11,13 +11,13 @@
         </template>
         <template #header> {{ name || "无名" }}</template>
         <template #header-extra>
-          <router-link :to="{ name: 'Detail', params: { id: ID } }">
-            <n-button circle size="small">
-              <template #icon>
-                <EllipsisHorizontalCircleOutline />
-              </template>
-            </n-button>
-          </router-link>
+          <!-- <router-link :to="{ name: 'Detail', params: { id: ID } }"> -->
+          <n-button circle size="small" @click="show = true">
+            <template #icon>
+              <EllipsisHorizontalCircleOutline />
+            </template>
+          </n-button>
+          <!-- </router-link> -->
         </template>
         <template #description> 需要人数：{{ num || 0 }}</template>
         {{
@@ -63,6 +63,16 @@
           </n-space>
         </template>
       </n-thing>
+      <n-drawer v-model:show="show" :width="width">
+        <n-drawer-content :title="name" closable>
+          <n-h3> 队伍描述：</n-h3>
+          <n-p> {{ describe }}</n-p>
+          <n-h3> 队员需求：</n-h3>
+          <n-p> {{ describe }}</n-p>
+          <n-h3>需要人数:</n-h3>
+          <n-p> {{ num }}</n-p>
+        </n-drawer-content>
+      </n-drawer>
     </n-card>
   </div>
 </template>
@@ -74,7 +84,7 @@ import {
   PaperPlane,
   EllipsisHorizontalCircleOutline,
 } from "@vicons/ionicons5";
-import { computed } from "@vue/runtime-core";
+import { computed, ref } from "vue";
 export default {
   name: "thing",
   props: {
@@ -92,7 +102,16 @@ export default {
     EllipsisHorizontalCircleOutline,
   },
   setup(props) {
+    let width = ref("20%");
+    function Width() {
+      const win = document.body.clientWidth;
+      if (win > 1500) width = "30%";
+      else width = "70%";
+    }
+    Width();
     return {
+      width,
+      show: ref(false),
       ID: computed(() => parseInt(props.id)),
     };
   },
